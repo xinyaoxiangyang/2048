@@ -1,0 +1,16 @@
+stages:
+- name: build
+  steps:
+  - runScriptConfig:
+      image: maven:3-jdk-7
+      shellScript: mvn clean package
+- name: package
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: juixtu/2048:v2
+      pushRemote: true
+      registry: index.docker.io
+timeout: 60
+notification: {}
