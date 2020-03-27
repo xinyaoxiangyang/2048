@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: m2048
+  namespace: one-tu
+  labels:
+    app: java
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java
+  template:
+    metadata:
+      labels:
+        app: java
+    spec:
+      containers:
+      - name: m2048
+        image: juixtu/2048:v2
+        ports:
+        - name: java
+          containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: m2048
+  namespace: one-tu
+spec:
+  selector:
+    app: java
+  ports:
+  - name: java
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+    NodePort: 32712
+  type: nodePort
