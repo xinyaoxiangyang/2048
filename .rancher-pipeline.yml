@@ -12,5 +12,9 @@ stages:
       tag: juixtu/2048:v2
       pushRemote: true
       registry: index.docker.io
+- name: deploy
+  steps:
+  - applyYamlConfig:
+      path: ./Deployment.yaml
 timeout: 60
 notification: {}
