@@ -35,6 +35,6 @@ spec:
     port: 8080
     protocol: TCP
     targetPort: 8080
-    NodePort: 32712
+    nodePort: 32712
   type: NodePort
   selector:
