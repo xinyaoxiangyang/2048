@@ -10,7 +10,6 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: juixtu/2048:v3
-      pushRemote: true
       registry: index.docker.io
 - name: deploy
   steps:
