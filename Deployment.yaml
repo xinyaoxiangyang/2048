@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: m2048
-  namespace: pipline
+  namespace: pipeline
   labels:
     app: java
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: m2048
-        image: juixtu/2048:v3
+        image: juixtu/2048:v1
         ports:
         - name: java
           containerPort: 8080
@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: m2048
-  namespace: pipline
+  namespace: pipeline
 spec:
   selector:
     app: java
