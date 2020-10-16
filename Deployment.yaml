@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: m2048-1
+  name: m2048
   namespace: pipeline
   labels:
     app: java
