@@ -9,13 +9,17 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: juixtu/2048:v1
+      tag: juixtu/2048:aws
       pushRemote: true
       registry: index.docker.io
 - name: deploy
   steps:
   - applyYamlConfig:
       path: ./Deployment.yaml
+    when:
+      branch:
+        include:
+        - deploy
 timeout: 60
 branch:
   include:
