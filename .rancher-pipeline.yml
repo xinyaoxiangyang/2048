@@ -16,6 +16,10 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./Deployment.yaml
+    when:
+      branch:
+        exclude:
+        - master
 timeout: 60
 branch:
   include:
