@@ -12,6 +12,8 @@ stages:
       tag: juixtu/2048:aws
       pushRemote: true
       registry: index.docker.io
+    env:
+      PLUGIN_DEBUG: "true"
 - name: deploy
   steps:
   - applyYamlConfig:
