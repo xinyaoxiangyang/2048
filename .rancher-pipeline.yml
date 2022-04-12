@@ -11,7 +11,7 @@ stages:
       buildContext: .
       tag: juixtu/2048:v1
       pushRemote: true
-      registry: index.docker.io
+      registry: 10.199.11.141:10080
 - name: deploy
   steps:
   - applyYamlConfig:
