@@ -4,16 +4,6 @@ stages:
   - runScriptConfig:
       image: maven:3-jdk-7
       shellScript: mvn clean package
-- name: package
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: demo/2048:aws
-      pushRemote: true
-      registry: 10.199.11.141:10080
-    env:
-      PLUGIN_DEBUG: "true"
 timeout: 60
 branch:
   include:
